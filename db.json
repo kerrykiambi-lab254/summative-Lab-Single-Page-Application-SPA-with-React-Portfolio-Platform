@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Portfolio Redesign",
+      "description": "A modern portfolio built with React and responsive layouts.",
+      "tags": ["React", "CSS", "Design"],
+      "imageUrl": "https://via.placeholder.com/300x200?text=Portfolio"
+    },
+    {
+      "id": 2,
+      "title": "Task Manager API",
+      "description": "A JSON server mock backend to support CRUD operations.",
+      "tags": ["API", "json-server", "CRUD"],
+      "imageUrl": "https://via.placeholder.com/300x200?text=API"
+    }
+  ]
+}
