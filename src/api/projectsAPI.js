@@ -1,40 +1,48 @@
-const BASE_URL = 'http://localhost:3001/projects';
+const GITHUB_API_URL = 'https://api.github.com/users/kerrykiambi-lab254/repos';
 
 export async function fetchAllProjects() {
-  const response = await fetch(BASE_URL);
-  if (!response.ok) throw new Error('Failed to fetch projects');
-  return response.json();
+  const response = await fetch(GITHUB_API_URL);
+  if (!response.ok) throw new Error('Failed to fetch projects from GitHub');
+  const repos = await response.json();
+  // Map GitHub repo data to our project format
+  return repos.map(repo => ({
+    id: repo.id,
+    title: repo.name,
+    description: repo.description || 'No description available',
+    tags: repo.language ? [repo.language] : [],
+    imageUrl: `https://via.placeholder.com/300x200?text=${encodeURIComponent(repo.name)}`,
+    html_url: repo.html_url,
+    created_at: repo.created_at,
+    updated_at: repo.updated_at,
+  }));
 }
 
 export async function fetchProjectById(id) {
-  const response = await fetch(`${BASE_URL}/${id}`);
-  if (!response.ok) throw new Error('Project not found');
-  return response.json();
+  const response = await fetch(`${GITHUB_API_URL}/${id}`);
+  if (!response.ok) throw new Error('Project not found on GitHub');
+  const repo = await response.json();
+  return {
+    id: repo.id,
+    title: repo.name,
+    description: repo.description || 'No description available',
+    tags: repo.language ? [repo.language] : [],
+    imageUrl: `https://via.placeholder.com/300x200?text=${encodeURIComponent(repo.name)}`,
+    html_url: repo.html_url,
+    created_at: repo.created_at,
+    updated_at: repo.updated_at,
+  };
 }
 
+// Note: GitHub repos are read-only without authentication
+// These functions are placeholders and will throw errors
 export async function createProject(project) {
-  const response = await fetch(BASE_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(project),
-  });
-  if (!response.ok) throw new Error('Failed to create project');
-  return response.json();
+  throw new Error('Cannot create projects on GitHub without authentication');
 }
 
 export async function updateProject(id, project) {
-  const response = await fetch(`${BASE_URL}/${id}`, {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(project),
-  });
-  if (!response.ok) throw new Error('Failed to update project');
-  return response.json();
+  throw new Error('Cannot update projects on GitHub without authentication');
 }
 
 export async function deleteProject(id) {
-  const response = await fetch(`${BASE_URL}/${id}`, {
-    method: 'DELETE',
-  });
-  if (!response.ok) throw new Error('Failed to delete project');
+  throw new Error('Cannot delete projects on GitHub without authentication');
 }

@@ -1,6 +1,6 @@
 import ProjectCard from './ProjectCard.jsx';
 
-function ProjectList({ projects, onDelete }) {
+function ProjectList({ projects }) {
   if (!projects.length) {
     return <p className="empty-state">No projects available.</p>;
   }
@@ -8,7 +8,7 @@ function ProjectList({ projects, onDelete }) {
   return (
     <div className="project-grid">
       {projects.map((project) => (
-        <ProjectCard key={project.id} project={project} onDelete={onDelete} />
+        <ProjectCard key={project.id} project={project} />
       ))}
     </div>
   );

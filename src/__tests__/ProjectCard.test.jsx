@@ -9,16 +9,18 @@ describe('ProjectCard', () => {
     description: 'Project description',
     tags: ['React', 'Test'],
     imageUrl: 'https://via.placeholder.com/300',
+    html_url: 'https://github.com/test/repo',
   };
 
   it('renders the project title and description', () => {
     render(
       <BrowserRouter>
-        <ProjectCard project={mockProject} onDelete={vi.fn()} />
+        <ProjectCard project={mockProject} />
       </BrowserRouter>
     );
 
     expect(screen.getByText('Test Project')).toBeInTheDocument();
     expect(screen.getByText('Project description')).toBeInTheDocument();
+    expect(screen.getByText('View on GitHub')).toBeInTheDocument();
   });
 });

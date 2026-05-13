@@ -10,7 +10,7 @@ function ProjectDetails() {
   useEffect(() => {
     fetchProjectById(id)
       .then(setProject)
-      .catch(() => setError('Project not found.'));
+      .catch(() => setError('Project not found on GitHub.'));
   }, [id]);
 
   if (error) {
@@ -32,7 +32,10 @@ function ProjectDetails() {
             <span key={tag} className="tag">{tag}</span>
           ))}
         </div>
-        <Link to={`/projects/${project.id}/edit`} className="button">Edit Project</Link>
+        <p><strong>Created:</strong> {new Date(project.created_at).toLocaleDateString()}</p>
+        <p><strong>Last Updated:</strong> {new Date(project.updated_at).toLocaleDateString()}</p>
+        <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="button">View on GitHub</a>
+        <Link to="/projects" className="button secondary">Back to Projects</Link>
       </div>
     </section>
   );

@@ -12,7 +12,6 @@ describe('NavBar', () => {
 
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Projects')).toBeInTheDocument();
-    expect(screen.getByText('Add Project')).toBeInTheDocument();
     expect(screen.getByText('About')).toBeInTheDocument();
   });
 });

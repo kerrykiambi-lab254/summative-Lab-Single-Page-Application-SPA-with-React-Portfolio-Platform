@@ -11,6 +11,6 @@ describe('Routing', () => {
         </Routes>
       </MemoryRouter>
     );
-    expect(screen.getByText('Welcome to the Portfolio SPA')).toBeInTheDocument();
+    expect(screen.getByText("Welcome to Kerry Kiambi's Portfolio")).toBeInTheDocument();
   });
 });
