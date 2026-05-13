@@ -76,6 +76,7 @@ Test files are located in `src/__tests__/`
 
 This project is connected to the GitHub repository:
 
-https://github.com/kerrykiambi-lab254/summative-Lab-Single-Page-Application-SPA-with-React-Portfolio-Platform
+https://github.com/kerrykiambi-lab254
+
 thank you :) for reading this 
 
