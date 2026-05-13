@@ -1,6 +1,6 @@
 # Portfolio SPA Platform
 
-A React Single Page Application that displays GitHub repositories as portfolio projects, complete with client-side routing, custom hooks, and automated testing.
+A React Single Page Application that displays GitHub repositories as portfolio projects, complete with client-side routing, custom hooks, and automated testing.This is a brief summary of its internal workings of the summarive lab to the marking criteria 
 
 ## Tech Stack
 
@@ -77,4 +77,5 @@ Test files are located in `src/__tests__/`
 This project is connected to the GitHub repository:
 
 https://github.com/kerrykiambi-lab254/summative-Lab-Single-Page-Application-SPA-with-React-Portfolio-Platform
+thank you :) for reading this 
 
