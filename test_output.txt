@@ -1,0 +1,29 @@
+﻿> spa_portfolio@0.0.0 test
+> jest
+
+PASS  src/App.test.jsx
+  App Component
+    ✓ renders the app header with title (50 ms)
+    ✓ renders the subtitle (7 ms)
+    ✓ renders initial projects (11 ms)
+    ✓ renders project descriptions (9 ms)
+    ✓ filters projects based on search query (155 ms)
+    ✓ filters projects by description (200 ms)
+    ✓ clears filter to show all projects (144 ms)
+    ✓ adds a new project (758 ms)
+    ✓ clears form inputs after adding a project (743 ms)
+    ✓ does not add project with empty title (533 ms)
+    ✓ does not add project with empty description (265 ms)
+    ✓ deletes a project (18 ms)
+    ✓ shows empty state message when no projects match search (225 ms)
+    ✓ renders footer (10 ms)
+    ✓ renders GitHub button with correct link (12 ms)
+    ✓ added project appears at the top of the list (712 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       16 passed, 16 total
+Snapshots:   0 total
+Time:        6.078 s
+Ran all test suites.
+
+✓ All tests have passed successfully!
