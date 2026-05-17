@@ -15,7 +15,13 @@ const initialProjects = [
 ]
 
 function App() {
-  const [projects, setProjects] = useState(initialProjects)
+  const adjectives = ['Creative','Brilliant','Innovative','Dynamic','Sleek','Vibrant','Radiant','Clever','Bold','Nova'];
+  const [projects, setProjects] = useState(() =>
+    initialProjects.map((p) => ({
+      ...p,
+      adjective: adjectives[Math.floor(Math.random() * adjectives.length)],
+    }))
+  );
   const [query, setQuery] = useState('')
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
@@ -37,6 +43,7 @@ function App() {
       id: Date.now(),
       title: title.trim(),
       description: description.trim(),
+      adjective: adjectives[Math.floor(Math.random() * adjectives.length)],
     }
 
     setProjects((current) => [nextProject, ...current])
@@ -116,7 +123,7 @@ function App() {
             <article key={project.id} className="project-card">
               <div>
                 <p className="project-badge">Featured</p>
-                <h3>{project.title}</h3>
+                <h3>{project.adjective} {project.title}</h3>
                 <p>{project.description}</p>
               </div>
               <button

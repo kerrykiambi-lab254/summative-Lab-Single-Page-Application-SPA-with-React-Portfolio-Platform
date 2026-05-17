@@ -10,24 +10,24 @@ import App from './App';
 describe('Personal Project Showcase App', () => {
   test('renders the application header', () => {
     render(<App />);
-    const headerElement = screen.getByRole('heading', { name: /Creative/i });
+    const headerElement = screen.getByRole('heading', { name: /Personal Project Showcase/i });
     expect(headerElement).toBeInTheDocument();
   });
 
   test('renders initial projects', () => {
     render(<App />);
-    expect(screen.getByText('Solaris E-Commerce')).toBeInTheDocument();
-    expect(screen.getByText('Nebula Analytics')).toBeInTheDocument();
+    expect(screen.getByText((content) => content.includes('Solaris E-Commerce'))).toBeInTheDocument();
+    expect(screen.getByText((content) => content.includes('Nebula Analytics'))).toBeInTheDocument();
   });
 
   test('filters projects based on search term', () => {
     render(<App />);
     const searchInput = screen.getByPlaceholderText(/Search projects/i);
-    
+
     fireEvent.change(searchInput, { target: { value: 'Solaris' } });
-    
-    expect(screen.getByText('Solaris E-Commerce')).toBeInTheDocument();
-    expect(screen.queryByText('Nebula Analytics')).not.toBeInTheDocument();
+
+    expect(screen.getByText((content) => content.includes('Solaris E-Commerce'))).toBeInTheDocument();
+    expect(screen.queryByText((content) => content.includes('Nebula Analytics'))).not.toBeInTheDocument();
   });
 
   test('adds a new project when form is submitted', () => {
@@ -40,8 +40,8 @@ describe('Personal Project Showcase App', () => {
     fireEvent.change(descInput, { target: { value: 'Test description content' } });
     fireEvent.click(addButton);
 
-    expect(screen.getByText('New Test Project')).toBeInTheDocument();
-    expect(screen.getByText('Test description content')).toBeInTheDocument();
+    expect(screen.getByText(/New Test Project/)).toBeInTheDocument();
+    expect(screen.getByText(/Test description content/)).toBeInTheDocument();
   });
 
   test('deletes a project when delete button is clicked', () => {
