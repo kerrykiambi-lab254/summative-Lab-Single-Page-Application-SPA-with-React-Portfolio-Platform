@@ -4,13 +4,13 @@ import './App.css'
 const initialProjects = [
   {
     id: 1,
-    title: 'cat cafe project',
-    description: 'A cozy Solaris cat cafe app with cat-themed UX and reservation flow.',
+    title: 'Solaris E-Commerce',
+    description: 'An e-commerce platform for solar products.',
   },
   {
     id: 2,
-    title: 'personal website project',
-    description: 'A personal portfolio site to showcase skills and recent work.',
+    title: 'Nebula Analytics',
+    description: 'Analytics dashboard for observational data and insights.',
   },
 ]
 
@@ -53,7 +53,7 @@ function App() {
       <header className="app-header">
         <div>
           <p className="eyebrow">Portfolio Showcase</p>
-          <h1>lifestyle of kerry&apos;s projects</h1>
+          <h1>Creative Personal Project Showcase</h1>
           <p className="subtitle">
             Explore recent work, add new ideas, and filter the project list.
           </p>
