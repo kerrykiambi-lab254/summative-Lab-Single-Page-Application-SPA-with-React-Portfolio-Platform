@@ -1,0 +1,23 @@
+﻿
+> spa_portfolio@0.0.0 test
+> jest --watchAll=false
+
+node.exe : PASS src/App.test.jsx
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (PASS src/App.test.jsx:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  Personal Project Showcase App
+    ΓêÜ renders the application header (113 ms)
+    ΓêÜ renders initial projects (11 ms)
+    ΓêÜ filters projects based on search term (52 ms)
+    ΓêÜ adds a new project when form is submitted (36 ms)
+    ΓêÜ deletes a project when delete button is clicked (18 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        3.292 s
+Ran all test suites.
