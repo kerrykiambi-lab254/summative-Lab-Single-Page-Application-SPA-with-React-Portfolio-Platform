@@ -10,24 +10,24 @@ import App from './App';
 describe('Personal Project Showcase App', () => {
   test('renders the application header', () => {
     render(<App />);
-    const headerElement = screen.getByRole('heading', { name: /Personal Project Showcase/i });
+    const headerElement = screen.getByRole('heading', { name: /Kerry's Project Collection/i });
     expect(headerElement).toBeInTheDocument();
   });
 
   test('renders initial projects', () => {
     render(<App />);
-    expect(screen.getByText((content) => content.includes('Solaris E-Commerce'))).toBeInTheDocument();
-    expect(screen.getByText((content) => content.includes('Nebula Analytics'))).toBeInTheDocument();
+    expect(screen.getByText((content) => content.includes('Aurora Bazaar'))).toBeInTheDocument();
+    expect(screen.getByText((content) => content.includes('Quantum Ledger'))).toBeInTheDocument();
   });
 
   test('filters projects based on search term', () => {
     render(<App />);
     const searchInput = screen.getByPlaceholderText(/Search projects/i);
 
-    fireEvent.change(searchInput, { target: { value: 'Solaris' } });
+    fireEvent.change(searchInput, { target: { value: 'Aurora' } });
 
-    expect(screen.getByText((content) => content.includes('Solaris E-Commerce'))).toBeInTheDocument();
-    expect(screen.queryByText((content) => content.includes('Nebula Analytics'))).not.toBeInTheDocument();
+    expect(screen.getByText((content) => content.includes('Aurora Bazaar'))).toBeInTheDocument();
+    expect(screen.queryByText((content) => content.includes('Quantum Ledger'))).not.toBeInTheDocument();
   });
 
   test('adds a new project when form is submitted', () => {
